@@ -12,3 +12,10 @@
 */
 
 Route::get('/', 'SiteController@mainPage');
+
+Route::get('/category/{category}', 'SiteController@category');
+
+Route::get('/post/{post}', 'SiteController@post');
+
+Route::get('admin/all-posts', 'SiteController@allPosts');
+

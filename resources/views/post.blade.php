@@ -26,7 +26,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Main</a></li>
-                <li><a href="/public/admin/all-posts">Categories</a></li>
+                <li><a href="users.php">Categories</a></li>
                 <li><a href="invites.php">Posts manager</a></li>
             </ul>
         </div>
@@ -37,7 +37,7 @@
 <div class="content">
 
     <div class="content_body">
-        @foreach ($posts as $post)
+
 
             <div class="panel panel-primary">
 
@@ -50,12 +50,11 @@
 
                     <p>Post date: @datetime($post->post_date)</p>
 
-                    <p>{{ $post->post_preview }}</p>
+                    <p>{{ $post->post_body }}</p>
                 </div>
 
             </div>
-        @endforeach
-            {!! $posts->render() !!}
+
     </div>
     <div class="panel panel-primary" id="categories">
 

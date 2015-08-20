@@ -25,7 +25,7 @@
 
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Main</a></li>
+                <li class="active"><a href="/public">Main</a></li>
                 <li><a href="/public/admin/all-posts">Categories</a></li>
                 <li><a href="invites.php">Posts manager</a></li>
             </ul>
@@ -37,40 +37,17 @@
 <div class="content">
 
     <div class="content_body">
-        @foreach ($posts as $post)
 
-            <div class="panel panel-primary">
+        <table class="table">
+            <thead><td>Post name</td><td>Post date</td><td>Operations</td></thead>
 
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ $post->post_name }}</h3>
-                </div>
-
-                <div class="panel-body">
-                    <p>Post category: {{ $post->post_category }}</p>
-
-                    <p>Post date: @datetime($post->post_date)</p>
-
-                    <p>{{ $post->post_preview }}</p>
-                </div>
-
-            </div>
-        @endforeach
-            {!! $posts->render() !!}
-    </div>
-    <div class="panel panel-primary" id="categories">
-
-        <div class="panel-heading">
-            <h3 class="panel-title">Categories</h3>
-        </div>
-
-        <div class="list-group">
-
-            @foreach ($categories as $category)
-                <a href="http://localhost/public/category/{{ $category->category_name }}" class="list-group-item">{{ $category->category_name }}</a>
+            @foreach ($posts as $post)
+                <tr><td>{{ $post->post_name }}</td><td>@datetime($post->post_date)</td><td></td></tr>
             @endforeach
 
-        </div>
+        </table>
 
+        {!! $posts->render() !!}
     </div>
 
 </div>
