@@ -11,10 +11,10 @@
     <title>Blog</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://localhost/resources/assets/twitter_bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/twitter_bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="http://localhost/resources/assets/template.css" rel="stylesheet">
+    <link href="/assets/template.css" rel="stylesheet">
 
 </head>
 
@@ -26,8 +26,8 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Main</a></li>
-                <li><a href="/public/admin/all-posts">Categories</a></li>
-                <li><a href="invites.php">Posts manager</a></li>
+                <li><a href="/admin/all-posts">Posts manager</a></li>
+                <li><a href="/admin/all-categories">Categories manager</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -66,7 +66,7 @@
         <div class="list-group">
 
             @foreach ($categories as $category)
-                <a href="http://localhost/public/category/{{ $category->category_name }}" class="list-group-item">{{ $category->category_name }}</a>
+                <a href="/category/{{ $category->category_name }}" class="list-group-item">{{ $category->category_name }}</a>
             @endforeach
 
         </div>

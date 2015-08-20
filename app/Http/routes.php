@@ -19,3 +19,5 @@ Route::get('/post/{post}', 'SiteController@post');
 
 Route::get('admin/all-posts', 'SiteController@allPosts');
 
+Route::get('admin/all-categories', 'SiteController@allCategories');
+

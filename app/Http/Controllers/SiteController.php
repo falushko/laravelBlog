@@ -35,6 +35,11 @@ class SiteController extends Controller
         return view('all_posts', ['posts' => $posts]);
     }
 
+    public function allCategories(){
+        $categories = $this->getAllCategories();
+        return view('categories', ['categories' => $categories]);
+    }
+
     public function getAllCategories(){
         return DB::table('categories')->select("category_name")->get();
     }
