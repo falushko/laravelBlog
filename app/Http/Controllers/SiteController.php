@@ -21,7 +21,7 @@ class SiteController extends Controller
     public function category($category)
     {
         $posts = DB::table('posts')->select("post_name", "post_category", "post_date", "post_preview")->where('post_category', $category)->paginate(25);
-        $categoryDescription = DB::table('categories')->select("category_name","category_description")->where('category_name', $category)->first();
+        $categoryDescription = DB::table('categories')->select("category_name", "category_description")->where('category_name', $category)->first();
         $categories = $this->getAllCategories();
         return view('postsByCategory', ['posts' => $posts, 'categories' => $categories, 'category' => $categoryDescription]);
     }
@@ -45,6 +45,8 @@ class SiteController extends Controller
         return view('categories', ['categories' => $categories]);
     }
 
+
+    //todo shit
     public function deletePost(Request $request)
     {
         DB::table('posts')->where('post_name', $request->post_name)->delete();

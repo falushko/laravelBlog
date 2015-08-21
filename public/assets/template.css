@@ -40,7 +40,6 @@ ul.menu{
     padding: 0;
     list-style-type: none;
     margin-top: 15px;
-
 }
 
 ul.menu>li{
@@ -68,6 +67,7 @@ nav{
     background-color: #303F9F;
     border-color: #303F9F;
 }
+
 
 /* end menu */
 

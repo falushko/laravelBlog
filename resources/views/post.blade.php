@@ -1,39 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <html lang="en">
+    <head>
 
-    <title>Blog</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/assets/twitter_bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <title>Blog</title>
 
-    <!-- Custom styles for this template -->
-    <link href="/assets/template.css" rel="stylesheet">
+        @include('includes.stylesheets')
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-<nav>
-    <div class="container">
-        <ul class="menu">
-            <li><a href="/">Main</a></li>
-            <li><a href="/admin/all-posts">Posts manager</a></li>
-            <li><a href="/admin/all-categories">Categories manager</a></li>
-        </ul>
-    </div>
-</nav>
+    @include('includes.navigation')
 
-<div class="content">
 
-    <div class="content_body">
+    <div class="content">
 
+        <div class="content_body">
 
             <div class="panel panel-primary">
 
@@ -51,24 +36,12 @@
 
             </div>
 
-    </div>
-    <div class="panel panel-primary" id="categories">
-
-        <div class="panel-heading">
-            <h3 class="panel-title">Categories</h3>
-        </div>
-
-        <div class="list-group">
-
-            @foreach ($categories as $category)
-                <a href="/category/{{ $category->category_name }}" class="list-group-item">{{ $category->category_name }}</a>
-            @endforeach
 
         </div>
 
+        @include('includes.sidebar')
+
     </div>
 
-</div>
-
-</body>
-</html>
+    </body>
+    </html>
