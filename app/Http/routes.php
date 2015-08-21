@@ -21,3 +21,5 @@ Route::get('admin/all-posts', 'SiteController@allPosts');
 
 Route::get('admin/all-categories', 'SiteController@allCategories');
 
+Route::post('/delete-post', 'SiteController@deletePost');
+

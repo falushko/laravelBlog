@@ -16,6 +16,11 @@
     <!-- Custom styles for this template -->
     <link href="/assets/template.css" rel="stylesheet">
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/javascript.js"></script>
+
+
+
 </head>
 
 <body>
@@ -42,7 +47,7 @@
             <thead><td>Post name</td><td>Post date</td><td>Operations</td></thead>
 
             @foreach ($posts as $post)
-                <tr><td>{{ $post->post_name }}</td><td>@datetime($post->post_date)</td><td></td></tr>
+                <tr><td class="post_name">{{ $post->post_name }}</td><td>@datetime($post->post_date)</td><td><a href="#" class="delete">Delete</a></td></tr>
             @endforeach
 
         </table>

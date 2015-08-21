@@ -68,4 +68,24 @@ body {
     margin: 20px auto 0 auto;
 }
 
+div.pagination{
+    width: 780px;
+    text-align: center;
+    margin: -20px 0 0 0;
+}
+
+
+
+.pagination>li.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #303F9F;
+    border-color: #303F9F;
+}
+
+.pagination>li>a,
+.pagination>li>span{
+    color: #303F9F;
+}
+
 

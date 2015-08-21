@@ -18,12 +18,16 @@ class DatabaseSeeder extends Seeder
 
         Model::reguard();*/
 
-        for ($i = 0; $i < 10; $i++) {
+      /*  for ($i = 0; $i < 10; $i++) {
             DB::table('categories')->insert([
                 'category_name' => str_random(10),
-                'category_description' => str_random(500),
+                'category_description' => "Some dummy text. Advances in intensive care support such as therapeutic hypothermia or new
+                liver assist devices have been the mainstay of treatment attempting to bridge the gap from acute liver
+                failure to liver transplantation, but the efficacy of the available devices in reducing mortality has
+                been questioned. To address this issue, the present animal study was aimed to analyze the pure clinical
+                effects of a simple extracorporeal dummy device in an anhepatic porcine model of acute liver failure.",
             ]);
-        }
+        }*/
 
         $categories = DB::table('categories')->select("category_name")->get();
 
@@ -33,7 +37,7 @@ class DatabaseSeeder extends Seeder
             $categoriesArray[] = $cat->category_name;
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 150; $i++) {
             $ii = rand(0, 9);
             DB::table('posts')->insert([
                 'post_name' => str_random(60),

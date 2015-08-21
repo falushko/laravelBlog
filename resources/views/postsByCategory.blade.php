@@ -38,6 +38,18 @@
 
     <div class="content_body">
 
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">Category: {{ $category->category_name }}</h3>
+            </div>
+
+            <div class="panel-body">
+
+                <p>{{ $category->category_description }}</p>
+            </div>
+
+        </div>
 
         @foreach ($posts as $post)
 
@@ -57,9 +69,9 @@
 
             </div>
         @endforeach
-            <div class="pagination">
-                {!! $posts->render() !!}
-                </div>
+        <div class="pagination">
+            {!! $posts->render() !!}
+            </div>
     </div>
     <div class="panel panel-primary" id="categories">
 
