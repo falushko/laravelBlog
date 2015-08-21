@@ -20,17 +20,13 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav>
     <div class="container">
-
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Main</a></li>
-                <li><a href="/admin/all-posts">Posts manager</a></li>
-                <li><a href="/admin/all-categories">Categories manager</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
+        <ul class="menu">
+            <li><a href="/">Main</a></li>
+            <li><a href="/admin/all-posts">Posts manager</a></li>
+            <li><a href="/admin/all-categories">Categories manager</a></li>
+        </ul>
     </div>
 </nav>
 
