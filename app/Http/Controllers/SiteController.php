@@ -22,13 +22,16 @@ class SiteController extends Controller
     {
         $posts = DB::table('posts')->select("post_name", "post_category", "post_date", "post_preview")->where('post_category', $category)->paginate(25);
         $categoryDescription = DB::table('categories')->select("category_name", "category_description")->where('category_name', $category)->first();
+        if(empty($categoryDescription)) abort(404);
         $categories = $this->getAllCategories();
+
         return view('postsByCategory', ['posts' => $posts, 'categories' => $categories, 'category' => $categoryDescription]);
     }
 
     public function post($postName)
     {
         $post = DB::table('posts')->select("post_name", "post_category", "post_date", "post_body")->where('post_name', $postName)->first();
+        if(empty($post)) abort(404);
         $categories = $this->getAllCategories();
         return view('post', ['post' => $post, 'categories' => $categories]);
     }
