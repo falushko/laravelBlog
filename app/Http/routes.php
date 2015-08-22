@@ -34,4 +34,11 @@ Route::get('/edit-category/{category_name}', 'AdminController@editCategory');
 Route::post('/submit-edited-category/{category_name}', 'AdminController@submitEditedCategory');
 
 // page with form to add new post
-Route::get('/add-post', 'SiteController@addPost');
+Route::get('/add-post', 'AdminController@addPost');
+// submit new post
+Route::post('/submit-post', 'AdminController@submitPost');
+
+// page with form to edit existed post
+Route::get('/edit-post/{post_name}', 'AdminController@editPost');
+// submit changes
+Route::post('/submit-edited-post/{post_name}', 'AdminController@submitEditedPost');

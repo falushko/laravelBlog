@@ -50,7 +50,7 @@ class SiteController extends Controller
     public function allPosts()
     {
         $posts = DB::table('posts')->select("post_name", "post_date")->paginate(25);
-        return view('all_posts', ['posts' => $posts]);
+        return view('allPosts', ['posts' => $posts]);
     }
 
     // show the page with categories names and ability to manipulate them

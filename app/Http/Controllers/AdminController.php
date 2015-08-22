@@ -74,7 +74,61 @@ class AdminController extends Controller
 
     // show view with form to add new post
     public function addPost(){
-        return view('addPost');
+        $categories = DB::table('categories')->select("category_name")->get();
+
+        return view('addPost', ['categories' => $categories]);
     }
 
+    // submit new post
+    public function submitPost(Request $request){
+
+        $this->validate($request, [
+            'post_name' => 'required|unique:posts|max:255',
+            'post_category' => 'required',
+            'post_date' => 'required',
+            'post_preview' => 'required|max:500',
+            'post_body' => 'required|max:10000',
+        ]);
+
+
+        DB::table('posts')->insert(
+            ['post_name' => $request->input('post_name'),
+                'post_category' => $request->input('post_category'),
+                'post_date' => strtotime($request->input('post_date')),
+                'post_preview' => $request->input('post_preview'),
+                'post_body' => $request->input('post_body')]
+        );
+
+        return back();
+    }
+
+    // page with form to edit already existed post (post_name edit is not allowed, because it is primary key)
+    public function editPost($post_name){
+        $categories = DB::table('categories')->select("category_name")->get();
+        $post = DB::table('posts')->select("post_name", 'post_category', 'post_preview', 'post_body')
+            ->where('post_name', $post_name)->first();
+
+        return view('editPost', ['categories' => $categories, 'post' => $post]);
+    }
+
+    // submit edited post
+    public function submitEditedPost(Request $request, $post_name){
+
+        $this->validate($request, [
+            'post_category' => 'required',
+            'post_date' => 'required',
+            'post_preview' => 'required|max:500',
+            'post_body' => 'required|max:10000',
+        ]);
+
+
+        DB::table('posts')->where('post_name', $post_name)->update(
+            ['post_category' => $request->input('post_category'),
+                'post_date' => strtotime($request->input('post_date')),
+                'post_preview' => $request->input('post_preview'),
+                'post_body' => $request->input('post_body')]
+        );
+
+        return back();
+    }
 }

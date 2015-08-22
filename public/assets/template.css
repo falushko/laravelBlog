@@ -108,4 +108,15 @@ label{
     color: #8e8e8e
 }
 
+#datepicker{
+    width: 100px;
+}
+
+.panel-footer{
+    text-align: right;
+}
+
+button{
+    display: inline-block;
+}
 

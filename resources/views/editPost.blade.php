@@ -27,13 +27,13 @@
                 <h3 class="panel-title">Add post</h3>
             </div>
 
-            <form role="form" name="form" action="submit-post" method="post">
+            <form role="form" name="form" action="/submit-edited-post/{{ $post->post_name }}" method="post">
                 <div class="panel-body">
 
 
                     <div class="form-group">
                         <label for="comment">Post name</label>
-                        <input type="text" name="post_name" class="form-control">
+                        <input type="text" name="post_name" class="form-control" disabled value="{{ $post->post_name }}">
                     </div>
 
                     <div class="form-group">
@@ -53,12 +53,12 @@
 
                     <div class="form-group">
                         <label for="comment">Post preview</label>
-                        <textarea name="post_preview" class="form-control" rows="4"></textarea>
+                        <textarea name="post_preview" class="form-control" rows="4">{{ $post->post_preview }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="comment">Post Description</label>
-                        <textarea name="post_body" class="form-control" rows="7"></textarea>
+                        <textarea name="post_body" class="form-control" rows="7">{{ $post->post_body }}</textarea>
                     </div>
 
                 </div>
