@@ -21,5 +21,14 @@ Route::get('admin/all-posts', 'SiteController@allPosts');
 
 Route::get('admin/all-categories', 'SiteController@allCategories');
 
-Route::post('/delete-post', 'SiteController@deletePost');
+Route::get('/delete-post/{post_name}', 'SiteController@deletePost');
 
+Route::get('/delete-category/{post_category}', 'SiteController@deleteCategory');
+
+Route::get('/add-post', 'SiteController@addPost');
+
+Route::get('/add-category', 'SiteController@addCategory');
+Route::post('/submit-category', 'SiteController@submitCategory');
+
+Route::get('/edit-category/{category_name}', 'SiteController@editCategory');
+Route::post('/submit-edited-category/{category_name}', 'SiteController@submitEditedCategory');

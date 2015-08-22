@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - laravel_blog2@localhost" uuid="ad857bdb-2a71-44d8-9552-a9b79ab9ffef">
+    <database-info product="MySQL" version="5.5.41-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="laravel_blog"/>
+    <table name="categories" schema="" catalog="laravel_blog" type="TABLE">
+      <column name="category_name" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="category_description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="category_name"/>
+    </table>
+    <table name="posts" schema="" catalog="laravel_blog" type="TABLE">
+      <column name="post_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="post_category" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="post_date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="post_preview" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="post_body" sqlType="VARCHAR" precision="10000" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="post_name"/>
+    </table>
+    <table name="users" schema="" catalog="laravel_blog" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="email"/>
+    </table>
+  </data-source>
+</component>

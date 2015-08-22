@@ -31,7 +31,7 @@
                 <tr>
                     <td class="post_name">{{ $post->post_name }}</td>
                     <td>@datetime($post->post_date)</td>
-                    <td><a href="#" class="delete">Delete</a></td>
+                    <td><a href="/delete-post/{{ $post->post_name }}" class="delete">Delete</a></td>
                 </tr>
             @endforeach
 

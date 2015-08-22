@@ -22,7 +22,7 @@
 
         @yield('content')
 
-        @include('postsList')
+        @include('includes.postsList')
 
     </div>
 

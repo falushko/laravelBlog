@@ -19,6 +19,7 @@
 
     <div class="content_body">
 
+        <p>&nbsp;&nbsp;<a href="/add-category">Add new category</a></p>
         <table class="table">
             <thead>
             <td>Category</td>
@@ -27,8 +28,8 @@
 
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->category_name }}</td>
-                    <td>Delete</td>
+                    <td><a href="/edit-category/{{ $category->category_name }}">{{ $category->category_name }}</a></td>
+                    <td><a href="/delete-category/{{ $category->category_name }}">Delete</a></td>
                 </tr>
             @endforeach
 
