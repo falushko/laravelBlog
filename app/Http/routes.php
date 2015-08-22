@@ -1,34 +1,37 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
+// main page with all posts
 Route::get('/', 'SiteController@mainPage');
 
+// posts by category
 Route::get('/category/{category}', 'SiteController@category');
 
+// single post
 Route::get('/post/{post}', 'SiteController@post');
 
+// page with all posts and ability to manipulate them
 Route::get('admin/all-posts', 'SiteController@allPosts');
 
+// page with all categories and ability to manipulate them
 Route::get('admin/all-categories', 'SiteController@allCategories');
 
-Route::get('/delete-post/{post_name}', 'SiteController@deletePost');
+// admin controller and manipulations with data
 
-Route::get('/delete-category/{post_category}', 'SiteController@deleteCategory');
+// delete single post from database
+Route::get('/delete-post/{post_name}', 'AdminController@deletePost');
 
+// delete single category and all posts, associated with it
+Route::get('/delete-category/{post_category}', 'AdminController@deleteCategory');
+
+// page with form to add new category
+Route::get('/add-category', 'AdminController@addCategory');
+// submit new category
+Route::post('/submit-category', 'AdminController@submitCategory');
+
+// page with form to edit existed category
+Route::get('/edit-category/{category_name}', 'AdminController@editCategory');
+// submit changes
+Route::post('/submit-edited-category/{category_name}', 'AdminController@submitEditedCategory');
+
+// page with form to add new post
 Route::get('/add-post', 'SiteController@addPost');
-
-Route::get('/add-category', 'SiteController@addCategory');
-Route::post('/submit-category', 'SiteController@submitCategory');
-
-Route::get('/edit-category/{category_name}', 'SiteController@editCategory');
-Route::post('/submit-edited-category/{category_name}', 'SiteController@submitEditedCategory');
