@@ -11,3 +11,4 @@ To install project type next commands sequently:
 name: laravel_blog
 user: someuser
 password: password
+7. Go!
