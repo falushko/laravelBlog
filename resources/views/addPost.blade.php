@@ -65,7 +65,7 @@
 
                 <div class="panel-footer">
                     <button type="submit" class="btn btn-labeled btn-success" id="send">
-                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Add
+                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>&nbsp;&nbsp;&nbsp;Add
                     </button>
                 </div>
                 {!! csrf_field() !!}

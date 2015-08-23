@@ -24,7 +24,7 @@
         <div class="panel panel-primary">
 
             <div class="panel-heading">
-                <h3 class="panel-title">Add post</h3>
+                <h3 class="panel-title">Edit post</h3>
             </div>
 
             <form role="form" name="form" action="/submit-edited-post/{{ $post->post_name }}" method="post">
@@ -65,7 +65,7 @@
 
                 <div class="panel-footer">
                     <button type="submit" class="btn btn-labeled btn-success" id="send">
-                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Add
+                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>&nbsp;&nbsp;&nbsp;Edit
                     </button>
                 </div>
                 {!! csrf_field() !!}
