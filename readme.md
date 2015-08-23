@@ -1,6 +1,6 @@
 Test task with simple laravel blog.
 
-To install project type next commands sequently:
+To install project type next commands sequentially:
 
 1. git clone https://github.com/feriatos/laravelBlog.git
 2. cd laravelBlog
